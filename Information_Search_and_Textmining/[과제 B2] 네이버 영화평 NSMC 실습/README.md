@@ -13,7 +13,7 @@ SVM 및 로지스틱 회귀(Logistic Regression) 모델로 문서 분류 실습�
 - **CountVectorizer**와 **TfidfTransformer**를 사용해 **TF-IDF 벡터**를 생성하고 희소행렬(COO format)로 저장 
 단어 인덱스(train_vocab.tsv), 라벨(train_labels.txt)도 별도로 저장.
 - Bigram 실습 ngram_range=(2,2) 설정으로 **음절 bigram 벡터** 생성해서 형태소 분석과 동일한 과정 수행
-- scikit-learn의 SVM과 Logistic Regression 이용하여 분류 및 평가
+- SVM과 Logistic Regression, Decision Tree, Random Forest 등 scikit-learn의 여러 머신러닝 모델들을 이용하여 분류 및 평가
 
 
 ### 실습 결과
