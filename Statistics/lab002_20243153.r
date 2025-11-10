@@ -1,0 +1,33 @@
+data = read.table("data.txt")
+X=as.integer(data[[2]]/5000)
+Y=as.integer(data[[3]]/5000)
+
+print(range(X))
+print(as.integer(mean(X)))
+print(as.integer(var(X)))
+print(as.integer(sd(X)))
+print(as.integer(min(X)))
+print(as.integer(max(X)))
+
+print(length(Y))
+Y=Y[Y!=0]
+print(length(Y))
+
+print(min(Y))
+print(max(Y))
+
+step= as.integer((max(Y) - min(Y))/8)
+print(step)
+
+breaks = seq(min(Y), max(Y)+step, by = step)
+Y.cut = cut(Y,breaks,right = FALSE)	
+Y.freq = table(Y.cut)
+print(cbind(Y.freq))
+
+bmp(file="aa.bmp")
+hist(Y, breaks=breaks, col = "lightgrey", xlab="High", ylab="Count", main="Frequency", right = FALSE)
+dev.off()
+
+bmp(file = "bb.bmp")
+plot(data[1:100,4], data[1:100,5], xlab= "High", ylab="Low", main = "Scatter")
+dev.off()
